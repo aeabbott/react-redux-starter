@@ -3,7 +3,6 @@ import { autobind } from 'core-decorators';
 
 
 class LaunchPage extends Component {
-
     constructor(props){
         super(props);
     }
