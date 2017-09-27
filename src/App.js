@@ -5,7 +5,7 @@ import {
     Route,
     Link
 } from 'react-router-dom';
-import LaunchPage from './js/components/screens/launchPage/LaunchPage';
+import LaunchPageContainer from './js/components/screens/launchPage/LaunchPageContainer';
 import PageTwo from './js/components/screens/pageTwo/PageTwo';
 import PageThree from './js/components/screens/pageThree/PageThree';
 
@@ -22,7 +22,7 @@ const App = () => (
 
             <hr/>
 
-            <Route exact path="/" component={LaunchPage}/>
+            <Route exact path="/" component={LaunchPageContainer}/>
             <Route path="/page-two" component={PageTwo}/>
             <Route path="/page-three" component={PageThree}/>
         </div>

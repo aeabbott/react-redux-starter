@@ -4,17 +4,17 @@ import { autobind } from 'core-decorators';
 
 
 class LaunchPage extends Component {
-    constructor(props) {
-        super(props);
-
-        this.onInputChange = this.onInputChange.bind(this);
-
-    }
+    // constructor(props) {
+    //     super(props);
+    //
+    //     this.onInputChange = this.onInputChange.bind(this);
+    //
+    // }
 
     @autobind
     onInputChange(event) {
         console.info('onInputChange function was triggered', event.target.value)
-        this.props.setNameInfo({ name: event.target.value });
+        this.props.setNameInfo(event.target.value);
     }
 
 
