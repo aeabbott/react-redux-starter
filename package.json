@@ -90,7 +90,6 @@
   },
   "babel": {
     "presets": [
-      "react-app",
       "env",
       "react",
       "stage-1"

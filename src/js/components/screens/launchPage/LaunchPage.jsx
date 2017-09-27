@@ -2,16 +2,19 @@ import React, { Component }from 'react';
 import { autobind } from 'core-decorators';
 
 
+
 class LaunchPage extends Component {
-    constructor(props){
+    constructor(props) {
         super(props);
+
+        this.onInputChange = this.onInputChange.bind(this);
+
     }
 
     @autobind
-    onInputChange(event){
-        this.props.setPostInfo({
-            [event.target.name]: event.target.value,
-        });
+    onInputChange(event) {
+        console.info('onInputChange function was triggered', event.target.value)
+        this.props.setNameInfo({ name: event.target.value });
     }
 
 
@@ -20,9 +23,12 @@ class LaunchPage extends Component {
            <div>
                <h2>LaunchPage</h2>
                <input
+                   id="name"
                    type="text"
+                   placeholder="Enter Name"
                    onChange={this.onInputChange}
                    value={this.props.name}
+                   name="name"
                />
                <input
                    type="submit"
