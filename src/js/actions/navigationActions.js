@@ -6,25 +6,25 @@ function appPush(location) {
 
 export function navigateForward() {
     return(dispatch, getState) => {
-        let destinationScreen = '';
+        let nextScreen = '';
         const state = getState();
 
         switch (state.router.location.pathname) {
-            case '/launch-page' :
-                destinationScreen = '/page-two'
+            case '/' :
+                nextScreen = '/page-two'
             break;
 
 
-            case '/' :
-                destinationScreen = '/page-three'
+            case '/page-two' :
+                nextScreen = '/page-three'
              break;
 
 
         default:
-                destinationScreen = '';
+              nextScreen = '';
             }
 
-            dispatch(appPush(destinationScreen));
+            dispatch(appPush(nextScreen));
         };
     }
 

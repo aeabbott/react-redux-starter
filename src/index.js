@@ -3,13 +3,16 @@ import { render } from 'react-dom';
 import {Provider} from 'react-redux'; // attaches our store to our react container components
 import App from './App';
 import './index.css';
-import configureStore from './js/store/storeConfig';
+import { configureStore, AppRouter} from './js/store/storeConfig';
+
 
 const store = configureStore()
 
 render(
     <Provider store={store}>
-        <App />
+        <AppRouter>
+            <App />
+        </AppRouter>
     </Provider>,
     document.getElementById('root')
 );

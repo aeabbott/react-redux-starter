@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import {
-    BrowserRouter as Router,
+    Switch,
     Route,
     Link
 } from 'react-router-dom';
@@ -12,7 +12,7 @@ import PageThree from './js/components/screens/pageThree/PageThree';
 
 
 const App = () => (
-    <Router>
+    <Switch>
         <div>
             <ul>
                 <li><Link to="/">Home</Link></li>
@@ -22,11 +22,11 @@ const App = () => (
 
             <hr/>
 
-            <Route exact path="/launch-page" component={LaunchPageContainer}/>
-            <Route path="/page-two" component={PageTwo}/>
-            <Route path="/page-three" component={PageThree}/>
+            <Route exact path="/" component={LaunchPageContainer}/>
+            <Route exact path="/page-two" component={PageTwo}/>
+            <Route exact path="/page-three" component={PageThree}/>
         </div>
-    </Router>
+    </Switch>
 )
 
 export default App;
