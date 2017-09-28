@@ -1,4 +1,4 @@
-import  { SET_NAME_INFO }  from '/Users/n0235530/PracticeProjects/react-starter-kit/src/js/actions/nameActions.js';
+import  { SET_NAME_INFO }  from '../actions/nameActions.js';
 
 const initialState = {
     name: '',
