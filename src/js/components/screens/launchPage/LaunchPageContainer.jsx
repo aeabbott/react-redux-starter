@@ -1,6 +1,7 @@
 import { connect } from 'react-redux';
 import setNameInfo from '/Users/n0235530/PracticeProjects/react-starter-kit/src/js/actions/nameActions.js';
-import LaunchPage from '/Users/n0235530/PracticeProjects/react-starter-kit/src/js/components/screens/launchPage/LaunchPage.jsx';
+import { navigateForward } from '/Users/n0235530/PracticeProjects/react-starter-kit/src/js/actions/navigationActions.js';
+import LaunchPage from './LaunchPage';
 
 
 const mapStateToProps = state => ({
@@ -8,6 +9,7 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
+    navigateForward: () => dispatch(navigateForward()),
     setNameInfo: (name) => dispatch(setNameInfo(name)),
 });
 

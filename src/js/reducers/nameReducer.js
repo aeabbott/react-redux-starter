@@ -2,6 +2,9 @@ import  { SET_NAME_INFO }  from '/Users/n0235530/PracticeProjects/react-starter-
 
 const initialState = {
     name: '',
+    location: {
+        search: '',
+    },
 
 };
 

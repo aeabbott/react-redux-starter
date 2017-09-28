@@ -22,7 +22,7 @@ const App = () => (
 
             <hr/>
 
-            <Route exact path="/" component={LaunchPageContainer}/>
+            <Route exact path="/launch-page" component={LaunchPageContainer}/>
             <Route path="/page-two" component={PageTwo}/>
             <Route path="/page-three" component={PageThree}/>
         </div>

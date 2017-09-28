@@ -4,17 +4,17 @@ import { autobind } from 'core-decorators';
 
 
 class LaunchPage extends Component {
-    // constructor(props) {
-    //     super(props);
-    //
-    //     this.onInputChange = this.onInputChange.bind(this);
-    //
-    // }
 
     @autobind
     onInputChange(event) {
         console.info('onInputChange function was triggered', event.target.value)
         this.props.setNameInfo(event.target.value);
+    }
+
+    @autobind
+    onNavigateForward(){
+        console.log('onNavigateForward function was called')
+        this.props.navigateForward();
     }
 
 
@@ -30,10 +30,12 @@ class LaunchPage extends Component {
                    value={this.props.name}
                    name="name"
                />
-               <input
-                   type="submit"
-                   value="Save"
-               />
+               <button
+                   id="continueButton"
+                   name="continue"
+                   type="button"
+                   onClick={this.onNavigateForward}
+               > Continue </button>
            </div>
        )
     }
