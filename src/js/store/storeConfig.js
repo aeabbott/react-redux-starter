@@ -3,7 +3,6 @@ import {createStore, applyMiddleware, compose } from 'redux';
 import { ConnectedRouter, routerMiddleware, connectRouter } from 'connected-react-router';
 import  thunk  from 'redux-thunk';
 import { createBrowserHistory } from 'history';
-import reduxImmutableStateInvariant from 'redux-immutable-state-invariant';
 import rootReducer from '../reducers/rootReducer';
 
 
@@ -22,10 +21,10 @@ export const AppRouter = props => (
 /* eslint-disable no-underscore-dangle */
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
-export function configureStore(initialState) {
-    return createStore(
-        appConnectRouter(rootReducer),
-        initialState,
-        composeEnhancers(applyMiddleware(thunk, appRouterMiddleware, reduxImmutableStateInvariant()))
-    );
-}
+
+const store = createStore(
+    appConnectRouter(rootReducer),
+    composeEnhancers(applyMiddleware(thunk, appRouterMiddleware)),
+);
+
+export default store;

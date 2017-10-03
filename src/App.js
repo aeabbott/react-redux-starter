@@ -1,9 +1,8 @@
-import React, { Component } from 'react';
+import React  from 'react';
 import './App.css';
 import {
     Switch,
-    Route,
-    Link
+    Route
 } from 'react-router-dom';
 import LaunchPageContainer from './js/components/screens/launchPage/LaunchPageContainer';
 import PageTwo from './js/components/screens/pageTwo/PageTwo';
@@ -12,21 +11,13 @@ import PageThree from './js/components/screens/pageThree/PageThree';
 
 
 const App = () => (
-    <Switch>
-        <div>
-            <ul>
-                <li><Link to="/">Home</Link></li>
-                <li><Link to="/page-two">PageTwo</Link></li>
-                <li><Link to="/page-three">Page-Three</Link></li>
-            </ul>
-
-            <hr/>
-
+    <div>
+        <Switch>
             <Route exact path="/" component={LaunchPageContainer}/>
             <Route exact path="/page-two" component={PageTwo}/>
             <Route exact path="/page-three" component={PageThree}/>
-        </div>
-    </Switch>
+        </Switch>
+     </div>
 )
 
 export default App;
